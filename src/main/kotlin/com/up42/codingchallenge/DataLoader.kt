@@ -27,7 +27,6 @@ class DataLoader(val featureRepository: FeatureRepository, val mongoTemplate: Mo
             it.readText().let { jsonString ->
                 jacksonObjectMapper().readValue<List<Feature>>(jsonString)
             }.forEach {
-                LOGGER.info("$it")
                 try {
                     featureRepository.save(it)
                 } catch (ignored: Exception) {
