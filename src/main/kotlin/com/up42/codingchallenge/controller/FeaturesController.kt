@@ -2,6 +2,7 @@ package com.up42.codingchallenge.controller
 
 import com.up42.codingchallenge.projection.FeatureSummary
 import com.up42.codingchallenge.service.FeatureService
+import io.swagger.annotations.ApiOperation
 import org.slf4j.LoggerFactory
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
@@ -19,6 +20,7 @@ class FeaturesController(val featureService: FeatureService) {
 
     private val logger = LoggerFactory.getLogger(FeaturesController::class.java)
 
+    @ApiOperation(value = "Search all features using pagination")
     @GetMapping
     fun getFeatures(
         @RequestParam(defaultValue = "0") page: Int,
@@ -28,11 +30,13 @@ class FeaturesController(val featureService: FeatureService) {
         return featureService.getFeatures(PageRequest.of(page, size))
     }
 
+    @ApiOperation(value = "Get feature by id")
     @GetMapping(value = ["/{featureId}"])
     fun getFeature(@PathVariable featureId: UUID): FeatureSummary {
         return featureService.getFeature(featureId)
     }
 
+    @ApiOperation(value = "Get feature quicklook image by feature id")
     @GetMapping(value = ["/{featureId}/quicklook"], produces = ["image/png"])
     fun getFeatureImage(@PathVariable featureId: UUID): ByteArray {
         val quickLookImageContent = this.featureService.getFeatureImage(featureId)
