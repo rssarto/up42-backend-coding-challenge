@@ -1,7 +1,7 @@
 package com.up42.codingchallenge.projection
 
-import java.util.UUID
 import org.springframework.beans.factory.annotation.Value
+import java.util.UUID
 
 interface FeatureSummary {
 

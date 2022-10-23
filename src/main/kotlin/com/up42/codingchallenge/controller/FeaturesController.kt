@@ -2,8 +2,6 @@ package com.up42.codingchallenge.controller
 
 import com.up42.codingchallenge.projection.FeatureSummary
 import com.up42.codingchallenge.service.FeatureService
-import java.util.Base64
-import java.util.UUID
 import org.slf4j.LoggerFactory
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
@@ -12,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import java.util.Base64
+import java.util.UUID
 
 @RestController
 @RequestMapping("/features")

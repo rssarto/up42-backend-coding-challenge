@@ -1,7 +1,6 @@
 package com.up42.codingchallenge.domain
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import java.util.*
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 

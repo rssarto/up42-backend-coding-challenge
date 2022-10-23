@@ -4,13 +4,13 @@ import com.up42.codingchallenge.exception.NotFoundException
 import com.up42.codingchallenge.projection.FeatureSummary
 import com.up42.codingchallenge.projection.QuicklookImageContent
 import com.up42.codingchallenge.repository.FeatureRepository
-import java.util.UUID
 import org.slf4j.LoggerFactory
 import org.springframework.cache.annotation.CacheConfig
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
+import java.util.UUID
 
 @Service
 @CacheConfig(cacheNames = ["feature"])
