@@ -7,7 +7,8 @@ echo "###########################################################"
 echo
 echo "--> Building the application code..."
 echo
-./gradlew clean build -x test
+./gradlew clean 
+./gradlew build -x test
 
 echo
 echo "--> Cleaning previous mongodb docker container running"
